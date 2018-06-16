@@ -1,0 +1,27 @@
+<section class="meu-form">
+	<article>
+		<h3>Two-day data binding</h3>
+		<div>
+			<input type="text" 
+			[value]="nome"
+			(input)="nome = $event.target.value"
+
+			/>
+
+			<input type="text" 
+				[ngModel]="nome"
+				(ngModelChange)="nome = $event"	
+			 >
+
+			<input type="text" [(ngModel)]="nome" />
+
+			<p>Você digitou: {{ nome }}</p>
+		</div>
+
+		<div>
+			<p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos;</p>
+			<input type="text" [(ngModel)]="pessoa.nome">
+			<input type="text" [(ngModel)]="pessoa.idade">
+		</div>
+	</article>
+</section>
